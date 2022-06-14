@@ -14,3 +14,9 @@ CREATE TABLE business(id int(15) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                       description text NOT NULL, 
                       FOREIGN KEY(id_category) REFERENCES categories(id)
                      );
+
+CREATE TABLE users (users_id int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+                    fullName TINYTEXT NOT NULL,
+                    pasword longtext not null,
+                    email tinytext not null
+                   );
