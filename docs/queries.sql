@@ -18,9 +18,15 @@ ALTER TABLE artisan
 ADD phone varchar(15) not null,
 ADD adress varchar(255) ;
 
+CREATE TABLE admin (
+    id INT(15) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
 
-CREATE TABLE users (users_id int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+
+CREATE TABLE users (id int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     fullName TINYTEXT NOT NULL,
-                    pasword longtext not null,
-                    email tinytext not null
+                    email tinytext not null,
+                    pasword longtext not null
                    );
