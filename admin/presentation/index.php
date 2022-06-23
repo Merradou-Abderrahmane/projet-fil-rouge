@@ -57,7 +57,7 @@ $data = $artisanManager->getAllArtisans();
             <main>
                 <div class="container-fluid px-2">
                     <h1 class="mt-4">👨‍💼Artisan management</h1>
-                    <form method="GET">
+                    <form method="GET" enctype="multipart/form-data">
                         <div class="card mt-4 ">
                             <div class="card-header">
 
@@ -70,7 +70,7 @@ $data = $artisanManager->getAllArtisans();
                                             <th>Name </th>
                                             <th class="d-none d-lg-table-cell">Address</th>
                                             <th class="d-none d-lg-table-cell">Phone</th>
-                                            <th class="d-none d-lg-table-cell">Description</th>
+                                            <!-- <th class="d-none d-lg-table-cell">Description</th> -->
                                             <th id="actions">Action</th>
                                         </tr>
                                     </thead>
@@ -82,7 +82,6 @@ $data = $artisanManager->getAllArtisans();
                                             <td><?= $artisan->getName() ?></td>
                                             <td><?= $artisan->getAddress() ?></td>
                                             <td><?= $artisan->getPhone() ?></td>
-                                            <td><?= $artisan->getDescription() ?></td>
                                             <td>
                                                 <a href="artisan/edit.php?id=<?php echo $artisan->getId() ?>" class="text-primary" style="text-decoration: none;"><i class="fa fa-fw fa-edit"></i>Edit</a> |
                                                 <a href="artisan/delete.php?id=<?php echo $artisan->getId() ?>" class="text-danger" style="text-decoration: none;" onClick="return confirm('Are you sure you want to delete this artisan ?');"><i class="fa fa-fw fa-trash"></i>Delete</a>

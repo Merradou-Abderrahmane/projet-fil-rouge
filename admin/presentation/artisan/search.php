@@ -67,7 +67,7 @@ else
         <div id="layoutSidenav_content">
             <main> 
  
-                <form method="POST" >
+                <form method="POST" enctype="multipart/form-data">
                     <div class=" text-center w-100">
                     <h1 class="mt-4"> <i class="fa fa-fw fa-search"></i> Find Artisan</h1>
                     <input class="searchBar pe-5" type= "text" style=" height : 38px"  name="search" >
@@ -76,7 +76,7 @@ else
                 </form>
 
                 <div class="container-fluid px-2">
-                    <form method="GET">
+                    <form method="GET" enctype="multipart/form-data">
                         <div class="card mt-4 ">
                             <div class="card-header">
 
@@ -89,7 +89,7 @@ else
                                             <th>Name </th>
                                             <th class="d-none d-lg-table-cell">Address</th>
                                             <th class="d-none d-lg-table-cell">Phone</th>
-                                            <th class="d-none d-lg-table-cell">Description</th>
+                                            <!-- <th class="d-none d-lg-table-cell">Description</th> -->
                                             <th id="actions">Action</th>
                                         </tr>
                                     </thead>
@@ -101,7 +101,6 @@ else
                                             <td><?= $artisan->getName() ?></td>
                                             <td><?= $artisan->getAddress() ?></td>
                                             <td><?= $artisan->getPhone() ?></td>
-                                            <td><?= $artisan->getDescription() ?></td>
                                             <td>
                                                 <a href="edit.php?id=<?php echo $artisan->getId() ?>" class="text-primary" style="text-decoration: none;"><i class="fa fa-fw fa-edit"></i>Edit</a> |
                                                 <a href="delete.php?id=<?php echo $artisan->getId() ?>" class="text-danger" style="text-decoration: none;" onClick="return confirm('Are you sure you want to delete this artisan ?');"><i class="fa fa-fw fa-trash"></i>Delete</a>

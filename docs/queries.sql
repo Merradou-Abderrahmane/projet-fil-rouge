@@ -16,7 +16,7 @@ CREATE TABLE artisan(id int(15) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 
 ALTER TABLE artisan 
 ADD phone varchar(15) not null,
-ADD adress varchar(255) ;
+ADD address varchar(255) ;
 
 CREATE TABLE admin (
     id INT(15) NOT NULL PRIMARY KEY AUTO_INCREMENT,
