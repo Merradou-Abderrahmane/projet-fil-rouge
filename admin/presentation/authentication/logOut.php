@@ -1,6 +1,11 @@
 <?php 
+session_start();
 
-header('location:logIn.php')
+session_unset();
+
+session_destroy();
+
+header("location:logIn.php");
 
 
 ?>

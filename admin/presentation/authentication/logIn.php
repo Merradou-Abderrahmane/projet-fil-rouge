@@ -1,19 +1,18 @@
 <?php
-require_once __DIR__ . '/../entities/mysqlconnection.php';
-require_once __DIR__ . '/../entities/admin.php';
-require_once __DIR__ . '/../manager/adminManager.php';
 
-if(isset($_POST['username'],$_POST['password'])){
+session_start();
+
+require_once __DIR__ . '/../../entities/mysqlconnection.php';
+require_once __DIR__ . '/../../entities/admin.php';
+require_once __DIR__ . '/../../manager/adminManager.php';
+
+
+if(isset($_POST['signin'])){
   
-    $username = $_POST['username'];
+    $name = $_POST['name'];
     $password = $_POST['password'];
-
-    if($username == 'admin' && $password == 'admin'){
-      
-        header('location:../../presentation/index.php');
-    
-    }
-      
+    $adminManager = new AdminManager();
+    $adminManager->logIn($name, $password);
 }
 ?>
 

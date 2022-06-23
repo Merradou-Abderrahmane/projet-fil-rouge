@@ -7,18 +7,22 @@ class AdminManager extends MySqlConnection {
 
 // fetch admin credentials from database
 
-$query = "SELECT * FROM admin WHERE `name` = $name AND `password` = $password";
+$query = "SELECT * FROM admin WHERE name = '$name' AND password = '$password'";
 $result = mysqli_query($this->getConnection(), $query);
-$row = mysqli_fetch_assoc($result);
+$row = mysqli_fetch_object($result);
+return print_r($row);
+            if(!empty($row)){
+                
+        if($name == $row->name AND  $password == $row->password){
 
-        if($row['name'] == $name && $row['password'] == $password){
-            $_SESSION['id'] = $result->id;
-            $_SESSION['password'] = $result->password;
-            header('location:/../index.php');
+            $_SESSION['id'] = $row->id;
+            $_SESSION['name'] = $row->name;
+            $_SESSION['password'] = $row->password;
+            
+            header('location:./../index.php');
         }
-        // else{
-        //     header('location:./../admin/login.php');
-        //         }
+      
+            }
     }
 }
 ?>

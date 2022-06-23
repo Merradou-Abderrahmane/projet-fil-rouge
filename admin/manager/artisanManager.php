@@ -1,6 +1,7 @@
 <?php
     require_once __DIR__.'/../entities/mysqlconnection.php';
     require_once __DIR__.'/../entities/artisan.php';
+    require_once __DIR__.'/../entities/category.php';
 
     class ArtisanManager extends MySqlConnection {
 
