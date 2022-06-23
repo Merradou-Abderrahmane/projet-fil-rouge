@@ -1,5 +1,7 @@
 <?php
-
+require_once __DIR__ . '/../entities/mysqlconnection.php';
+require_once __DIR__ . '/../entities/admin.php';
+require_once __DIR__ . '/../manager/adminManager.php';
 
 if(isset($_POST['username'],$_POST['password'])){
   
@@ -45,11 +47,11 @@ if(isset($_POST['username'],$_POST['password'])){
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                                <input type="text" name="name" id="your_name" placeholder="Your Name"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                                <input type="password" name="password" id="your_pass" placeholder="Password"/>
                             </div>
                             <!-- <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
