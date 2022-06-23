@@ -2,7 +2,7 @@
 
 class Category{
     private $id;
-    private $name;
+    private $category;
     private $photo;
 
     function getId(){
@@ -13,12 +13,12 @@ class Category{
         $this->id = $value;
     }
 
-    function getName(){
-        return $this->name;
+    function getcategory(){
+        return $this->category;
     }
 
-    function setName($value) {
-        $this->name = $value;
+    function setcategory($value) {
+        $this->category = $value;
     }
 
     function getPhoto(){
