@@ -2,7 +2,12 @@
 require_once __DIR__ . '/../manager/artisanManager.php';
 $artisanManager = new ArtisanManager();
 $data = $artisanManager->getAllArtisans();
+session_start();
 
+if(!$_SESSION['name'] AND !$_SESSION['password']){
+
+    header("location: ./authentication/login.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +83,7 @@ $data = $artisanManager->getAllArtisans();
                                     foreach ($data as $artisan) {
                                     ?>
                                         <tr>
-                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo 'http://localhost/projet-fil-rouge' . '../uploads/' . $artisan->getPhoto(); ?>"></td>
+                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo 'http://localhost/projet-fil-rouge/admin' . '../uploads/' . $artisan->getPhoto(); ?>"></td>
                                             <td><?= $artisan->getName() ?></td>
                                             <td><?= $artisan->getAddress() ?></td>
                                             <td><?= $artisan->getPhone() ?></td>
