@@ -37,11 +37,11 @@ $data = $artisanManager->getAllArtisans();
                             <div class="sb-nav-link-icon"><i class="fa fa-fw fa-globe"></i></div>
                             Browse Artisans <br>
                         </a>
-                        <a class="nav-link" href="employee/search.php">
+                        <a class="nav-link" href="artisan/search.php">
                             <div class="sb-nav-link-icon"><i class="fa fa-fw fa-search"></i></div>
                             Find Artisan <br>
                         </a>
-                        <a class="nav-link" href="employee/insert.php">
+                        <a class="nav-link" href="artisan/insert.php">
                             <div class="sb-nav-link-icon"><i class="fa fa-fw fa-plus-circle"></i></div>
                             Add Artisan <br>
                         </a>
@@ -57,7 +57,7 @@ $data = $artisanManager->getAllArtisans();
             <main>
                 <div class="container-fluid px-2">
                     <h1 class="mt-4">👨‍💼Artisan management</h1>
-                    <form method="GET">
+                    <form method="GET" enctype="multipart/form-data">
                         <div class="card mt-4 ">
                             <div class="card-header">
 
@@ -70,7 +70,7 @@ $data = $artisanManager->getAllArtisans();
                                             <th>Name </th>
                                             <th class="d-none d-lg-table-cell">Address</th>
                                             <th class="d-none d-lg-table-cell">Phone</th>
-                                            <th class="d-none d-lg-table-cell">Description</th>
+                                            <!-- <th class="d-none d-lg-table-cell">Description</th> -->
                                             <th id="actions">Action</th>
                                         </tr>
                                     </thead>
@@ -78,14 +78,13 @@ $data = $artisanManager->getAllArtisans();
                                     foreach ($data as $artisan) {
                                     ?>
                                         <tr>
-                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo 'http://localhost/project-10-gestion-demployee' . '../uploads/' . $employee->getPhoto(); ?>"></td>
+                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo 'http://localhost/projet-fil-rouge' . '../uploads/' . $artisan->getPhoto(); ?>"></td>
                                             <td><?= $artisan->getName() ?></td>
                                             <td><?= $artisan->getAddress() ?></td>
                                             <td><?= $artisan->getPhone() ?></td>
-                                            <td><?= $artisan->getDescription() ?></td>
                                             <td>
-                                                <a href="employee/edit.php?id=<?php echo $artisan->getId() ?>" class="text-primary" style="text-decoration: none;"><i class="fa fa-fw fa-edit"></i>Edit</a> |
-                                                <a href="employee/delete.php?id=<?php echo $artisan->getId() ?>" class="text-danger" style="text-decoration: none;" onClick="return confirm('Are you sure you want to delete this artisan ?');"><i class="fa fa-fw fa-trash"></i>Delete</a>
+                                                <a href="artisan/edit.php?id=<?php echo $artisan->getId() ?>" class="text-primary" style="text-decoration: none;"><i class="fa fa-fw fa-edit"></i>Edit</a> |
+                                                <a href="artisan/delete.php?id=<?php echo $artisan->getId() ?>" class="text-danger" style="text-decoration: none;" onClick="return confirm('Are you sure you want to delete this artisan ?');"><i class="fa fa-fw fa-trash"></i>Delete</a>
                                             </td>
                                         </tr>
                                     <?php } ?>

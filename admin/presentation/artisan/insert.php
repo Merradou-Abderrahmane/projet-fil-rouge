@@ -92,11 +92,11 @@ require_once '../../manager/artisanManager.php';
 									<input type="text" required name="phone" class="form-control" id="inputAuthor">
 								</div>
 								<div class="col-12">
-									<label for="inputPrix" class="form-label">address</label>
+									<label for="inputPrix" class="form-label">Address</label>
 									<input type="text" required name="address" class="form-control" id="inputPrix">
 								</div>
 								<div class="col-6">
-									<label for="department" class="form-label">description </label>
+									<label for="department" class="form-label">Description </label>
 									<input type="text" required name="description" class="form-control">
 								</div>
 								<div class="col-6">

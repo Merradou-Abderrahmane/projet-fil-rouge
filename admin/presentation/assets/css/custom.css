@@ -1,24 +1,26 @@
 
 nav {
-    background-color: #9B73A9 !important;
-    color: white !important ;
+    background-color: #FAC213 !important;
+    color: black !important ;
+    font-weight: bold;
+
 }
 
 a {
-    color: white !important;
+    color: black !important;
 }
 .sb-sidenav-custom {
-    background-color: #7B498D !important;
+    background-color: #FAC213 !important;
 }
 
 .btn-primary-custom-1 {
     background-color: #489b41 !important;
-    color: white !important;
+    color: black !important;
 }
 
 .btn-primary-custom-2 {
     background-color: #2290f7 !important;
-    color: white !important;
+    color: black !important;
 }
 
 /* .btn-primary-custom:active, .btn-primary-custom.active {
