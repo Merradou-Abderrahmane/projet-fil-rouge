@@ -1,8 +1,20 @@
 <?php
 
 
+if(isset($_POST['username'],$_POST['password'])){
+  
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
+    if($username == 'admin' && $password == 'admin'){
+      
+        header('location:../../presentation/index.php');
+    
+    }
+      
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
