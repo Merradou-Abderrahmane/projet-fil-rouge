@@ -95,7 +95,7 @@
             // Update query
             $sqlUpdateQuery = "UPDATE artisan SET 
                                 `name`='$name', 
-                                `description`n='$description',
+                                `description`='$description',
                                 `address`='$address',
                                 phone='$phone',
                                 photo='$photo' 

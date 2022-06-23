@@ -1,16 +1,16 @@
 <?php
-require_once __DIR__.'/../../manager/employeeManager.php';
-$employeeManager = new EmployeeManager();
-$data = $employeeManager->getAllEmployees();
+require_once __DIR__.'/../../manager/artisanManager.php';
+$artisanManager = new ArtisanManager();
+$data = $artisanManager->getAllArtisans();
 
 if(!empty($_POST)){      
     $searchInput = $_POST["search"] ;
-    $data = $employeeManager->searchByInput($searchInput);
+    $data = $artisanManager->searchByInput($searchInput);
 }
 else
 {
 
-    $data = $employeeManager->getAllEmployees();
+    $data = $artisanManager->getAllArtisans();
 }
 
 ?>
@@ -23,7 +23,7 @@ else
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <script src="https://kit.fontawesome.com/110fb8b8a8.js" crossorigin="anonymous"></script>
-    <title>Employee management</title>
+    <title>Artisan management</title>
     <link href="../assets/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/custom.css" />
 </head>
@@ -34,7 +34,7 @@ else
         <div class='w-100'>
             <img id="logo" class=" ms-3 rounded-circle" style="width:50px;" src="../assets/images/logo.png" alt="logo">
 
-            <a class="navbar-brand ps-3" id="top-title" href="../index.php">Employee management</a>
+            <a class="navbar-brand ps-3" id="top-title" href="../index.php">Artisan management</a>
             <a href="../authentication/logOut.php" style="text-decoration: none; margin-left: 850px; "  > <i class="fa fa-sign-out" style="margin-right:5px;" aria-hidden="true"></i>log Out</a>
 
         </div>
@@ -46,15 +46,15 @@ else
                     <div class="nav">
                         <a class="nav-link" href="../index.php">
                             <div class="sb-nav-link-icon"><i class="fa fa-fw fa-globe"></i></div>
-                            Browse Employees <br>
+                            Browse Artisans <br>
                         </a>
                         <a class="nav-link" href="search.php">
                             <div class="sb-nav-link-icon"><i class="fa fa-fw fa-search"></i></div>
-                            Find Employee <br>
+                            Find Artisan <br>
                         </a>
                         <a class="nav-link" href="insert.php">
                             <div class="sb-nav-link-icon"><i class="fa fa-fw fa-plus-circle"></i></div>
-                            Add Employee <br>
+                            Add Artisan <br>
                         </a>
                     </div>
                 </div>
@@ -69,7 +69,7 @@ else
  
                 <form method="POST" >
                     <div class=" text-center w-100">
-                    <h1 class="mt-4"> <i class="fa fa-fw fa-search"></i> Find Employee</h1>
+                    <h1 class="mt-4"> <i class="fa fa-fw fa-search"></i> Find Artisan</h1>
                     <input class="searchBar pe-5" type= "text" style=" height : 38px"  name="search" >
                     <input type="submit" value ="search" style="background-color:#7B498D; color:white;" class="btn btn mb-2">
                     </div> 
@@ -86,31 +86,25 @@ else
                                     <thead id="table-head">
                                         <tr>
                                             <th>Photo</th>
-                                            <th>Registration Number </th>
-                                            <th class="d-none d-lg-table-cell">First Name</th>
-                                            <th class="d-none d-lg-table-cell">Last Name</th>
-                                            <th class="d-none d-lg-table-cell">Birth Date</th>
-                                            <th class="d-none d-lg-table-cell">Department</th>
-                                            <th>Salary</th>
-                                            <th>Occupation</th>
+                                            <th>Name </th>
+                                            <th class="d-none d-lg-table-cell">Address</th>
+                                            <th class="d-none d-lg-table-cell">Phone</th>
+                                            <th class="d-none d-lg-table-cell">Description</th>
                                             <th id="actions">Action</th>
                                         </tr>
                                     </thead>
                                     <?php
-                                    foreach ($data as $employee) {
+                                    foreach ($data as $artisan) {
                                     ?>
                                         <tr>
-                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo 'http://localhost/project-10-gestion-demployee' . '/data/uploads/' . $employee->getPhoto(); ?>"></td>
-                                            <td><?= $employee->getRegistrationNumber() ?></td>
-                                            <td><?= $employee->getFirstName() ?></td>
-                                            <td><?= $employee->getLastName() ?></td>
-                                            <td><?= $employee->getBirthDate() ?></td>
-                                            <td><?= $employee->getDepartment() ?></td>
-                                            <td><?= $employee->getSalary() ?></td>
-                                            <td><?= $employee->getOccupation() ?></td>
+                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo 'http://localhost/projet-fil-rouge' . '../uploads/' . $artisan->getPhoto(); ?>"></td>
+                                            <td><?= $artisan->getName() ?></td>
+                                            <td><?= $artisan->getAddress() ?></td>
+                                            <td><?= $artisan->getPhone() ?></td>
+                                            <td><?= $artisan->getDescription() ?></td>
                                             <td>
-                                                <a href="edit.php?id=<?php echo $employee->getId() ?>" class="text-primary" style="text-decoration: none;"><i class="fa fa-fw fa-edit"></i>Edit</a> |
-                                                <a href="delete.php?id=<?php echo $employee->getId() ?>" class="text-danger" style="text-decoration: none;" onClick="return confirm('Are you sure you want to delete this employee ?');"><i class="fa fa-fw fa-trash"></i>Delete</a>
+                                                <a href="edit.php?id=<?php echo $artisan->getId() ?>" class="text-primary" style="text-decoration: none;"><i class="fa fa-fw fa-edit"></i>Edit</a> |
+                                                <a href="delete.php?id=<?php echo $artisan->getId() ?>" class="text-danger" style="text-decoration: none;" onClick="return confirm('Are you sure you want to delete this artisan ?');"><i class="fa fa-fw fa-trash"></i>Delete</a>
                                             </td>
                                         </tr>
                                     <?php } ?>
