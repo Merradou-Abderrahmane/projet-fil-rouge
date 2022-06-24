@@ -1,8 +1,8 @@
+
 <?php
 require_once __DIR__ . '/../manager/artisanManager.php';
 $artisanManager = new ArtisanManager();
 $data = $artisanManager->displayCategory();
-
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ $data = $artisanManager->displayCategory();
 		 <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
-        <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
+    
 		
         <!-- ============================================================== -->
         <!-- Main wrapper - style you can find in pages.scss -->
@@ -56,71 +56,21 @@ $data = $artisanManager->displayCategory();
 							<ul class="nav-menu">
 							
 								<li class="active"><a href="javascript:void(0);">Home<span class="submenu-indicator"></span></a>
-									<!-- <ul class="nav-dropdown nav-submenu">
-										<li><a href="index.html">Home Style 1</a></li>                                    
-										<li><a href="home-2.html">Home Style 2</a></li>                                    
-										<li><a href="home-3.html">Home Style 3</a></li> 
-										<li><a href="home-4.html">Home Style 4</a></li> 
-										<li><a href="home-5.html">Home Style 5</a></li><li><a href="home-6.html">Home Style 6</a></li> 
-										<li><a href="Map.html">Home Map</a></li> 
-									</ul> -->
+
 								</li>
 								
 								<li><a href="javascript:void(0);">Explore<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="events.html">All Events</a></li>
-										<li><a href="hotels.html">Find Hotels</a></li>
-										<li><a href="adventures.html">Find Adventures</a></li>		
-										<li><a href="booking.html">Booking Page</a></li>
-										<li><a href="dashboard.html">User Dashboard</a></li>
-										<li><a href="add-listing.html">Submit Listing</a></li> 
-									</ul>
+
 								</li>
 								
 								<li><a href="javascript:void(0);">Listings<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="javascript:void(0);">List Layouts<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="list-layout-with-sidebar.html">With Sadebar</a></li>
-												<li><a href="list-layout-full-width.html">Full Width</a></li>										
-												<li><a href="list-layout-with-map.html">With Map</a></li> 
-											</ul>
-										</li>
-										<li><a href="javascript:void(0);">Grid Layouts<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu" style="display: none;">
-												<li><a href="grid-with-sidebar.html">With Sidebar</a></li>                                    
-												<li><a href="grid-full-width.html">With Full Width</a></li>                                    
-												<li><a href="grid-with-map.html">With Map</a></li> 
-											</ul>
-										</li>
-										<li><a href="javascript:void(0);">Half Map Screen<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="half-map-with-list-layout.html">With List Layout</a></li>                                    
-												<li><a href="half-map-with-grid-layout.html">With Grid Layout</a></li>                                    
-												<li><a href="half-map-with-grid2-layout.html">With Grid Layout 2</a></li>
-											</ul>
-										</li>
-										<li><a href="javascript:void(0);">Single Listing<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="single-listing-1.html">Single Listing 1</a></li>                                    
-												<li><a href="single-listing-2.html">Single Listing 2</a></li>                                    
-												<li><a href="single-listing-3.html">Single Listing 3</a></li>
-											</ul>
-										</li>
-									</ul>
+
+										
+
 								</li>
 								
 								<li><a href="javascript:void(0);">Pages<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="blog.html">Blog Page</a></li>
-										<li><a href="blog-detail.html">Blog Detail</a></li>	
-										<li><a href="pricing.html">Pricing Page</a></li>	
-										<li><a href="about-us.html">About Us</a></li>
-										<li><a href="component.html">Component</a></li>
-										<li><a href="404.html">Error Page</a></li>
-										<li><a href="login.html">LogIn</a></li>
-										<li><a href="register.html">SignUp</a></li>
-									</ul>
+
 								</li>
 								
 								<li><a href="contact.html">Contacts</a></li>
@@ -134,11 +84,7 @@ $data = $artisanManager->displayCategory();
 										<i class="fa fa-sign-in-alt mr-1"></i><span class="dn-lg">Sign In</span>
 									</a>
 								</li>
-								<!-- <li class="add-listing">
-									<a href="add-listing.html">
-										 <i class="fas fa-plus-circle"></i> Add Listings
-									</a>
-								</li> -->
+
 							</ul>
 						</div>
 					</nav>
@@ -239,7 +185,8 @@ $data = $artisanManager->displayCategory();
 
 							<?php foreach($data as $value){ 
 
-                                ?>
+								?>
+
 
 							<div class="Reveal-cats-box">
 								<article class="Reveal-arbnb-box style-1">
@@ -248,7 +195,7 @@ $data = $artisanManager->displayCategory();
 									<div class="Reveal-Reveal-arbnb-box-image">
 										<figure>
 											<a href="stays.php?id=<?php echo $value->getId() ;?>">
-												<img src="assets/img/<?php echo $value->getPhoto() ;?> alt="">
+												<img src="assets/img/<?php echo $value->getPhoto() ;?>" class="img-responsive Reveal-listing-box-img" alt="">
 											</a>
 										</figure>
 									</div>
@@ -256,7 +203,7 @@ $data = $artisanManager->displayCategory();
 									<div class="Reveal-inner-box">
 										<div class="Reveal-box-inner-ellipsis">
 											<h4 class="entry-title">
-												<a href="stays.html"><?php echo $value->getCategory() ;?></a>
+												<a href="stays.html"><?php echo $value->getCategory() ;?>  </a>
 											</h4>
 										</div>
 									</div>
@@ -264,102 +211,12 @@ $data = $artisanManager->displayCategory();
 								</article>	
 							</div>
 							<?php  } ?>
-
-							<!-- Single Category -->
-							<div class="Reveal-cats-box">
-								<article class="Reveal-arbnb-box style-1">
-							
-									<!-- Single arbnb -->
-									<div class="Reveal-Reveal-arbnb-box-image">
-										<figure>
-											<a href="stays.html">
-												<img src="assets/img/c-4.jpg" class="img-responsive Reveal-listing-box-img" alt="">
-											</a>
-										</figure>
-									</div>
-
-									<div class="Reveal-inner-box">
-										<div class="Reveal-box-inner-ellipsis">
-											<h4 class="entry-title">
-												<a href="stays.html">Experiences</a>
-											</h4>
-										</div>
-									</div>
-				
-								</article>
-							</div>
+						
 							
 							<!-- Single Category -->
-							<div class="Reveal-cats-box">
-								<article class="Reveal-arbnb-box style-1">
-							
-									<!-- Single arbnb -->
-									<div class="Reveal-Reveal-arbnb-box-image">
-										<figure>
-											<a href="hotels.html">
-												<img src="assets/img/l-22.jpg" class="img-responsive Reveal-listing-box-img" alt="">
-											</a>
-										</figure>
-									</div>
-
-									<div class="Reveal-inner-box">
-										<div class="Reveal-box-inner-ellipsis">
-											<h4 class="entry-title">
-												<a href="hotels.html">Hotels</a>
-											</h4>
-										</div>
-									</div>
-				
-								</article>
-							</div>
 							
 							<!-- Single Category -->
-							<div class="Reveal-cats-box">
-								<article class="Reveal-arbnb-box style-1">
-								
-									<!-- Single arbnb -->
-									<div class="Reveal-Reveal-arbnb-box-image">
-										<figure>
-											<a href="adventures.html">
-												<img src="assets/img/l-14.jpg" class="img-responsive Reveal-listing-box-img" alt="">
-											</a>
-										</figure>
-									</div>
-
-									<div class="Reveal-inner-box">
-										<div class="Reveal-box-inner-ellipsis">
-											<h4 class="entry-title">
-												<a href="adventures.html">Adventures</a>
-											</h4>
-										</div>
-									</div>
-				
-								</article>
-							</div>
-							
-							<!-- Single Category -->
-							<div class="Reveal-cats-box">
-								<article class="Reveal-arbnb-box style-1">
-							
-									<!-- Single arbnb -->
-									<div class="Reveal-Reveal-arbnb-box-image">
-										<figure>
-											<a href="hotels.html">
-												<img src="assets/img/l-1.jpg" class="img-responsive Reveal-listing-box-img" alt="">
-											</a>
-										</figure>
-									</div>
-
-									<div class="Reveal-inner-box">
-										<div class="Reveal-box-inner-ellipsis">
-											<h4 class="entry-title">
-												<a href="destination-detail.html">restaurants</a>
-											</h4>
-										</div>
-									</div>
-				
-								</article>	
-							</div>
+						
 							
 						</div>
 						
@@ -385,7 +242,7 @@ $data = $artisanManager->displayCategory();
 					<!-- Row -->
 					
 					<div class="row">
-								
+						
 						<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 							<div class="Reveal-grid-item classical-list">
 								<div class="image">
@@ -419,7 +276,7 @@ $data = $artisanManager->displayCategory();
 												<span class="inc-fleat inc-add">302 mailburn, Canada</span>
 											</div>
 											<div class="listing-card-info-icon">
-												<span class="inc-fleat inc-call"><?= $artisan->getDescription() ?></span>
+												<span class="inc-fleat inc-call">+91 2356 548 958</span>
 											</div>
 										</div>  
 									</div>
@@ -437,7 +294,60 @@ $data = $artisanManager->displayCategory();
 								
 							</div>
 						</div>
-												
+						
+						<div class="col-lg-4 col-md-6 col-sm-6 col-12">
+							<div class="Reveal-grid-item classical-list">
+								<span class="Reveal-featured-liting-box"><span class="fst">Featured</span></span>
+								<div class="image">
+									<a href="listing-detail.html" class="Reveal-featured-listing-thumb">
+										<img src="assets/img/l-2.jpg" alt="latest property" class="img-responsive">
+									</a>
+									<div class="Reveal-listing-price-info"> 
+										<span class="pricetag">$30 - $60</span>
+									</div>
+									<a href="#" class="tag_t"><i class="ti-heart"></i>Save</a>								
+								</div>
+								
+								<div class="proerty_content">
+									<div class="author-avater">
+										<img src="assets/img/user-2.png" class="author-avater-img" alt="">
+									</div>
+									<div class="list-rates">
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star"></i>	
+									</div>
+									<div class="proerty_text">
+									  <h3 class="captlize"><a href="listing-detail.html">Green Rewoke Villa</a></h3>
+									</div>
+									<p class="property_add">Luxury Villa House in Your City</p>
+									<div class="property_meta"> 
+									  <div class="list-fx-features">
+											<div class="listing-card-info-icon">
+												<span class="inc-fleat inc-add">504 Vikraz, London</span>
+											</div>
+											<div class="listing-card-info-icon">
+												<span class="inc-fleat inc-call">+91 2356 548 958</span>
+											</div>
+										</div>  
+									</div>
+								</div>
+								
+								<div class="Reveal-listing-footer-info">
+									<div class="listing-cat">
+										<a href="search-listing.html" class="cat-icon cl-1"><i class="ti-home cbg-2"></i>Family Home</a>
+										<span class="more-cat">+3</span>
+									</div>
+									<div class="m-listing-status">
+										<span class="l-status l-close">Close</span>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						
 						<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 							<div class="Reveal-grid-item classical-list">
 								<div class="image">
@@ -490,7 +400,58 @@ $data = $artisanManager->displayCategory();
 							</div>
 						</div>
 						
-
+						<div class="col-lg-4 col-md-6 col-sm-6 col-12">
+							<div class="Reveal-grid-item classical-list">
+								<span class="Reveal-featured-liting-box"><span class="fst">Featured</span></span>
+								<div class="image">
+									<a href="listing-detail.html" class="Reveal-featured-listing-thumb">
+										<img src="assets/img/l-4.jpg" alt="latest property" class="img-responsive">
+									</a>
+									<div class="Reveal-listing-price-info"> 
+										<span class="pricetag">$55 - $100</span>
+									</div>
+									<a href="#" class="tag_t"><i class="ti-heart"></i>Save</a>								
+								</div>
+								
+								<div class="proerty_content">
+									<div class="author-avater">
+										<img src="assets/img/user-4.png" class="author-avater-img" alt="">
+									</div>
+									<div class="list-rates">
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star"></i>	
+									</div>
+									<div class="proerty_text">
+									  <h3 class="captlize"><a href="listing-detail.html">Sangam Raj Studio</a></h3>
+									</div>
+									<p class="property_add">Make Smart Data offices</p>
+									<div class="property_meta"> 
+									  <div class="list-fx-features">
+											<div class="listing-card-info-icon">
+												<span class="inc-fleat inc-add">27 Horsefair Green, CA</span>
+											</div>
+											<div class="listing-card-info-icon">
+												<span class="inc-fleat inc-call">+91 2356 548 958</span>
+											</div>
+										</div>  
+									</div>
+								</div>
+								
+								<div class="Reveal-listing-footer-info">
+									<div class="listing-cat">
+										<a href="search-listing.html" class="cat-icon cl-1"><i class="ti-briefcase cbg-4"></i>Office</a>
+										<span class="more-cat">+3</span>
+									</div>
+									<div class="m-listing-status">
+										<span class="l-status l-close">Close</span>
+									</div>
+								</div>
+								
+							</div>
+						</div>
 						
 						<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 							<div class="Reveal-grid-item classical-list">
@@ -544,9 +505,61 @@ $data = $artisanManager->displayCategory();
 							</div>
 						</div>
 						
+						<div class="col-lg-4 col-md-6 col-sm-6 col-12">
+							<div class="Reveal-grid-item classical-list">
+								<span class="Reveal-featured-liting-box"><span class="fst">Featured</span></span>
+								<div class="image">
+									<a href="listing-detail.html" class="Reveal-featured-listing-thumb">
+										<img src="assets/img/l-6.jpg" alt="latest property" class="img-responsive">
+									</a>
+									<div class="Reveal-listing-price-info"> 
+										<span class="pricetag">$35 - $60</span>
+									</div>
+									<a href="#" class="tag_t"><i class="ti-heart"></i>Save</a>								
+								</div>
+								
+								<div class="proerty_content">
+									<div class="author-avater">
+										<img src="assets/img/user-6.png" class="author-avater-img" alt="">
+									</div>
+									<div class="list-rates">
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star filled"></i>	
+										<i class="fa fa-star"></i>	
+									</div>
+									<div class="proerty_text">
+									  <h3 class="captlize"><a href="listing-detail.html">Sheekha Salone Shop</a></h3>
+									</div>
+									<p class="property_add">New Patcham Salone Services</p>
+									<div class="property_meta"> 
+									  <div class="list-fx-features">
+											<div class="listing-card-info-icon">
+												<span class="inc-fleat inc-add">46 Well Lane, Patcham</span>
+											</div>
+											<div class="listing-card-info-icon">
+												<span class="inc-fleat inc-call">+91 2356 548 958</span>
+											</div>
+										</div>  
+									</div>
+								</div>
+								
+								<div class="Reveal-listing-footer-info">
+									<div class="listing-cat">
+										<a href="search-listing.html" class="cat-icon cl-1"><i class="ti-cut cbg-6"></i>Services</a>
+										<span class="more-cat">+3</span>
+									</div>
+									<div class="m-listing-status">
+										<span class="l-status l-close">Close</span>
+									</div>
+								</div>
+								
+							</div>
+						</div>
 						
 					</div>
-
+					
 					<!-- Row -->
 					<div class="row">
 						<div class="col-lg-12 col-md-12 text-center">
@@ -713,28 +726,11 @@ $data = $artisanManager->displayCategory();
 			<!-- ============================ Reviews End ================================== -->
 			
 			<!-- ============================ Step How To Use Start ================================== -->
+
+			<div class="clearfix"></div>
 			<!-- ============================ Step How To Use End ====================== -->
 			
 			<!-- ============================ Call To Action Start ================================== -->
-			<!-- <section class="call-to-act" style="background:#e4074e url(assets/img/landing-bg.png) no-repeat">
-				<div class="container">
-					<div class="row justify-content-center">
-					
-						<div class="col-lg-7 col-md-8">
-							<div class="clt-caption text-center mb-4">
-								<h3>Subscribe Now!</h3>
-								<p>Simple pricing plans. Unlimited web maintenance service</p>
-							</div>
-							<div class="inner-flexible-box subscribe-box">
-								<div class="input-group">
-									<input type="text" class="form-control large" placeholder="Enter your mail here">
-									<button class="btn btn-subscribe" type="button"><i class="fa fa-arrow-right"></i></button>
-								</div>
-							</div>
-						</div>				
-					</div>
-				</div>
-			</section> -->
 			<!-- ============================ Call To Action End ================================== -->
 			
 			<!-- ============================ Footer Start ================================== -->
