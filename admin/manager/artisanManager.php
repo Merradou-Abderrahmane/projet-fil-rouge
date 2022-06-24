@@ -147,16 +147,14 @@
             }
             return $artisanArray;
         }
-
-                //Add category 
-        
+            
                 public function insertCategory($category){
 
                     $category = $category->getCategory();    
-                    $photo = $category->getPhoto();    
+                    // $photo = $category->getPhoto();    
                     // sql query
-                    $insertRow="INSERT INTO categories(`category`, `photo`) 
-                                  VALUES('$category', '$photo')";
+                    $insertRow="INSERT INTO categories(`category`) 
+                                  VALUES('$category')";
             
                     mysqli_query($this->getConnection(), $insertRow);
                         
