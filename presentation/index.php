@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../manager/artisanManager.php';
 $artisanManager = new ArtisanManager();
 $data = $artisanManager->displayCategory();
+$_data = $artisanManager->getAllArtisans();
 ?>
 
 <!DOCTYPE html>
@@ -242,12 +243,16 @@ $data = $artisanManager->displayCategory();
 					<!-- Row -->
 					
 					<div class="row">
-						
+						<?php
+					  foreach ($data as $artisan) {        
+						   ?>
+
+
 						<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 							<div class="Reveal-grid-item classical-list">
 								<div class="image">
 									<a href="listing-detail.html" class="Reveal-featured-listing-thumb">
-										<img src="assets/img/l-1.jpg" alt="latest property" class="img-responsive">
+										<img src="assets/img/shopping-in-florence-italy-artisans-in-florence-italy.png" alt="latest property" class="img-responsive">
 									</a>
 									<div class="Reveal-listing-price-info"> 
 										<span class="pricetag">$25 - $65</span>
@@ -257,15 +262,15 @@ $data = $artisanManager->displayCategory();
 								
 								<div class="proerty_content">
 									<div class="author-avater">
-										<img src="assets/img/user-1.png" class="author-avater-img" alt="">
+										<img src="<?php echo 'http://localhost/projet-fil-rouge/admin' . '../uploads/' . $artisan->getPhoto(); ?>" class="author-avater-img" alt="">
 									</div>
-									<div class="list-rates">
+									<!-- <div class="list-rates">
 										<i class="fa fa-star filled"></i>	
 										<i class="fa fa-star filled"></i>	
 										<i class="fa fa-star filled"></i>	
 										<i class="fa fa-star filled"></i>	
 										<i class="fa fa-star"></i>	
-									</div>
+									</div> -->
 									<div class="proerty_text">
 									  <h3 class="captlize"><a href="listing-detail.html">Zicom Gym House</a></h3>
 									</div>
@@ -282,7 +287,7 @@ $data = $artisanManager->displayCategory();
 									</div>
 								</div>
 								
-								<div class="Reveal-listing-footer-info">
+								<!-- <div class="Reveal-listing-footer-info">
 									<div class="listing-cat">
 										<a href="search-listing.html" class="cat-icon cl-1"><i class="ti-hummer cbg-1"></i>Gym Trainer</a>
 										<span class="more-cat">+3</span>
@@ -290,12 +295,13 @@ $data = $artisanManager->displayCategory();
 									<div class="m-listing-status">
 										<span class="l-status l-open">Open</span>
 									</div>
-								</div>
+								</div> -->
 								
 							</div>
 						</div>
-						
-						<div class="col-lg-4 col-md-6 col-sm-6 col-12">
+						<?php } ?>
+
+						<!-- <div class="col-lg-4 col-md-6 col-sm-6 col-12">
 							<div class="Reveal-grid-item classical-list">
 								<span class="Reveal-featured-liting-box"><span class="fst">Featured</span></span>
 								<div class="image">
@@ -553,10 +559,10 @@ $data = $artisanManager->displayCategory();
 									<div class="m-listing-status">
 										<span class="l-status l-close">Close</span>
 									</div>
-								</div>
+								</div> -->
 								
-							</div>
-						</div>
+							<!-- </div>
+						</div> -->
 						
 					</div>
 					
