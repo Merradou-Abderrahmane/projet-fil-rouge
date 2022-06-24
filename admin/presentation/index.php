@@ -7,6 +7,7 @@ session_start();
 if(!$_SESSION['name'] AND !$_SESSION['password']){
 
     header("location: ./authentication/login.php");
+
 }
 ?>
 

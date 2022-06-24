@@ -97,7 +97,7 @@ else
                                     foreach ($data as $artisan) {
                                     ?>
                                         <tr>
-                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo 'http://localhost/projet-fil-rouge' . '../uploads/' . $artisan->getPhoto(); ?>"></td>
+                                            <td><img class="border rounded-circle" style="max-width:50px;" src="<?php echo 'http://localhost/projet-fil-rouge/admin' . '../uploads/' . $artisan->getPhoto(); ?>"></td>
                                             <td><?= $artisan->getName() ?></td>
                                             <td><?= $artisan->getAddress() ?></td>
                                             <td><?= $artisan->getPhone() ?></td>

@@ -9,11 +9,14 @@ require_once __DIR__ . '/../../manager/adminManager.php';
 
 if(isset($_POST['signin'])){
   
-    $name = $_POST['name'];
+    $username = $_POST['name'];
     $password = $_POST['password'];
-    $adminManager = new AdminManager();
-    $adminManager->logIn($name, $password);
+    $logInManager = new AdminManager();
+    $logInManager->logIn($username, $password);
+
 }
+
+
 ?>
 
 
