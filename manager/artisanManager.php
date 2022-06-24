@@ -107,6 +107,35 @@
        
         }
 
+
+
+        public function getCategories($id){
+            $sqlGetQuery = "SELECT * FROM artisan
+            INNER JOIN categories on artisan.id_category = categories.id
+             WHERE categories.id= $id";
+        
+            // get result
+            $result = mysqli_query($this->getConnection(), $sqlGetQuery);
+        
+            // fetch to array
+            $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            $TableData = array();
+           
+            foreach ( $data as $artisan_data) {
+            $artisan = new Artisan();
+            $artisan->setId($artisan_data['id']);
+            $artisan->setCategory($artisan_data['category']);
+            $artisan->setName($artisan_data['name']);
+            $artisan->setDescription($artisan_data['description']);
+            $artisan->setAddress($artisan_data['address']);
+            $artisan->setPhone($artisan_data['phone']);
+            $artisan->setPhoto($artisan_data['photo']);
+           
+            array_push($TableData, $artisan);
+        }
+            return $TableData;
+        }  
+      
         public function getArtisan($id){
             $sqlGetQuery = "SELECT * FROM artisan WHERE id= $id";
         
@@ -147,14 +176,16 @@
             }
             return $artisanArray;
         }
-            
+
+                //Add category 
+        
                 public function insertCategory($category){
 
                     $category = $category->getCategory();    
-                    // $photo = $category->getPhoto();    
+                    $photo = $category->getPhoto();    
                     // sql query
-                    $insertRow="INSERT INTO categories(`category`) 
-                                  VALUES('$category')";
+                    $insertRow="INSERT INTO categories(`category`, `photo`) 
+                                  VALUES('$category', '$photo')";
             
                     mysqli_query($this->getConnection(), $insertRow);
                         
@@ -163,7 +194,7 @@
         
                //Get Categories
                
-               public function getCategories(){
+               public function displayCategory(){
         
                 $SelctRow = 'SELECT * FROM categories';                 
                        $query = mysqli_query($this->getConnection() ,$SelctRow);

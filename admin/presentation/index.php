@@ -7,6 +7,7 @@ session_start();
 if(!$_SESSION['name'] AND !$_SESSION['password']){
 
     header("location: ./authentication/login.php");
+
 }
 ?>
 
@@ -49,6 +50,10 @@ if(!$_SESSION['name'] AND !$_SESSION['password']){
                         <a class="nav-link" href="artisan/insert.php">
                             <div class="sb-nav-link-icon"><i class="fa fa-fw fa-plus-circle"></i></div>
                             Add Artisan <br>
+                        </a>
+                        <a class="nav-link" href="artisan/addCategory.php">
+                            <div class="sb-nav-link-icon"><i class="fa fa-fw fa-plus-circle"></i></div>
+                            Add Category <br>
                         </a>
                     </div>
                 </div>
