@@ -71,7 +71,7 @@ else
                     <div class=" text-center w-100">
                     <h1 class="mt-4"> <i class="fa fa-fw fa-search"></i> Find Artisan</h1>
                     <input class="searchBar pe-5" type= "text" style=" height : 38px"  name="search" >
-                    <input type="submit" value ="search" style="background-color:#7B498D; color:white;" class="btn btn mb-2">
+                    <input type="submit" value ="search" style="background-color:#FAC213; color:black;" class="btn btn mb-2">
                     </div> 
                 </form>
 
