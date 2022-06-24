@@ -51,6 +51,10 @@ if(!$_SESSION['name'] AND !$_SESSION['password']){
                             <div class="sb-nav-link-icon"><i class="fa fa-fw fa-plus-circle"></i></div>
                             Add Artisan <br>
                         </a>
+                        <a class="nav-link" href="artisan/addCategory.php">
+                            <div class="sb-nav-link-icon"><i class="fa fa-fw fa-plus-circle"></i></div>
+                            Add Category <br>
+                        </a>
                     </div>
                 </div>
                 <div class="sb-sidenav-footer sb-sidenav-custom">

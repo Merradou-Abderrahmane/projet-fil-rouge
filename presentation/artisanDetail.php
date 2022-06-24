@@ -1,3 +1,10 @@
+<?php
+include '../manager/artisanManager.php';
+$artisanManager = new ArtisanManager();
+$data = $artisanManager->getAllArtisans();
+
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 	
@@ -177,14 +184,18 @@
 								
 								<!-- author detail -->
 								<div class="author-full-detail">
+								    
+								<?php
+								foreach($data as $artisan){
 								
+							     	?>
 									<div class="author-bio-single-list">
 										<div class="author-bio-icon">
 											<i class="fa fa-marker"></i>
 										</div>
 										<div class="author-bio-caption">
 											<span>Location</span>
-											<h6>California, USA</h6>
+											<h6><?= $artisan->getDescription() ?></h6>
 										</div>
 									</div>
 									
@@ -209,7 +220,7 @@
 									</div>
 									
 								</div>
-								
+								<?php } ?>
 								<!-- Author List Count -->
 								<div class="author-list-detail">
 								

@@ -1,3 +1,10 @@
+<?php
+require_once __DIR__ . '/../manager/artisanManager.php';
+$artisanManager = new ArtisanManager();
+$data = $artisanManager->displayCategory();
+
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 	
@@ -229,14 +236,19 @@
 						<div class="owl-carousel owl-theme" id="ab-categorie-slide">
 							
 							<!-- Single Category -->
+
+							<?php foreach($data as $value){ 
+
+                                ?>
+
 							<div class="Reveal-cats-box">
 								<article class="Reveal-arbnb-box style-1">
 							
 									<!-- Single arbnb -->
 									<div class="Reveal-Reveal-arbnb-box-image">
 										<figure>
-											<a href="stays.html">
-												<img src="assets/img/c-1.jpg" class="img-responsive Reveal-listing-box-img" alt="">
+											<a href="stays.php?id=<?php echo $value->getId() ;?>">
+												<img src="assets/img/<?php echo $value->getPhoto() ;?> alt="">
 											</a>
 										</figure>
 									</div>
@@ -244,14 +256,15 @@
 									<div class="Reveal-inner-box">
 										<div class="Reveal-box-inner-ellipsis">
 											<h4 class="entry-title">
-												<a href="stays.html">Stays</a>
+												<a href="stays.html"><?php echo $value->getCategory() ;?></a>
 											</h4>
 										</div>
 									</div>
 				
 								</article>	
 							</div>
-							
+							<?php  } ?>
+
 							<!-- Single Category -->
 							<div class="Reveal-cats-box">
 								<article class="Reveal-arbnb-box style-1">
@@ -372,7 +385,7 @@
 					<!-- Row -->
 					
 					<div class="row">
-						
+								
 						<div class="col-lg-4 col-md-6 col-sm-6 col-12">
 							<div class="Reveal-grid-item classical-list">
 								<div class="image">
@@ -406,7 +419,7 @@
 												<span class="inc-fleat inc-add">302 mailburn, Canada</span>
 											</div>
 											<div class="listing-card-info-icon">
-												<span class="inc-fleat inc-call">+91 2356 548 958</span>
+												<span class="inc-fleat inc-call"><?= $artisan->getDescription() ?></span>
 											</div>
 										</div>  
 									</div>
@@ -533,7 +546,7 @@
 						
 						
 					</div>
-					
+
 					<!-- Row -->
 					<div class="row">
 						<div class="col-lg-12 col-md-12 text-center">
