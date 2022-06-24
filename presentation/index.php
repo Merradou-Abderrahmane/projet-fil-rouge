@@ -49,7 +49,7 @@ $_data = $artisanManager->getAllArtisans();
 				<nav id="navigation" class="navigation navigation-landscape">
 					<div class="nav-header">
 						<a class="nav-brand" href="#">
-							<img src="assets/img/logo.jpg" style="padding-bottom: -5px;" class="logo" alt="BiäaWcheria" />
+						<a BaiäaWcheria >
 						</a>
 						<div class="nav-toggle"></div>
 					</div>
@@ -172,7 +172,7 @@ $_data = $artisanManager->getAllArtisans();
 					<div class="col-lg-12 col-md-12">
 						<div class="sec-heading center">
 							<h2>Categories</h2>
-							<h3>Explore Top <span class="theme-cl">Categories</span></h3>
+							<h3>Explore chosen <span class="theme-cl">Categories</span></h3>
 						</div>
 					</div>
 				</div>
@@ -236,7 +236,7 @@ $_data = $artisanManager->getAllArtisans();
 					<div class="col-lg-12 col-md-12">
 						<div class="sec-heading center">
 							<h2>Featured</h2>
-							<h3>Top Rated <span class="theme-cl">Places</span></h3>
+							<h3>Recently added <span class="theme-cl">Artisans</span></h3>
 						</div>
 					</div>
 				</div>
