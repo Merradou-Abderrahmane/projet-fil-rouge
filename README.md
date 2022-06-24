@@ -3,5 +3,5 @@
 ## Sprint-1 Create the admin section for the "BiäaWcheria" website
 #### The ability to carry out CRUDS operations (add, update, delete, and search) on a range of data types plus admin authentication
 
-## Sprint-1 Create "BiäaWcheria" public section.
+## Sprint-2 Create "BiäaWcheria" public section.
 #### displaying craftspeople for visitors to see
